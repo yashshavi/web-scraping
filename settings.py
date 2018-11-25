@@ -13,8 +13,14 @@ BOT_NAME = 'b_project'
 
 SPIDER_MODULES = ['b_project.spiders']
 NEWSPIDER_MODULE = 'b_project.spiders'
-
-
+# feed-format setting 
+FEED_FORMAT = "json"
+FEED_URI = "FILE.json"
+#extenson
+EXTENSIONS = {
+    'scrapy.extensions.feedexport.FeedExporter': 500,
+    #scrapy.extensions.telnet.TelnetConsole': 500,
+}
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'b_project (+http://www.yourdomain.com)'
 
@@ -88,10 +94,3 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-FEED_FORMAT = "json"
-FEED_URI = "FILE.json"
-#extenson
-EXTENSIONS = {
-    'scrapy.extensions.feedexport.FeedExporter': 500,
-    #scrapy.extensions.telnet.TelnetConsole': 500,
-}
